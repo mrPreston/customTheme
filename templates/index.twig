@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% if jobs is not empty %}
+        {% for job in jobs %}
+            {% include ['job.twig'] %}
+        {% endfor %}
+    {% else %}
+        <div class="col-12 jumbotron">
+            <div class="text-center">
+                <h1 class="display-4">Oops we have not open positions</h1>
+                <p class="lead">Please select other department or just come back later :)</p>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

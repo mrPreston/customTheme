@@ -1,0 +1,29 @@
+<div class="job col-6 mb-3" >
+    <article class="job-item p-3">
+        {% block content %}
+            <div class="job-item__title">
+                <h4>{{job.title}}</h4>
+            </div>
+            <div class="job-item__metadata">
+                <div class="mb-3">
+                    <i class="material-icons">
+                        my_location
+                    </i>
+                    <span class="job-item__location-name ml-2 mr-5">{{job.location.name}}</span>
+                    <i class="material-icons mr-1">
+                        group
+                    </i>
+                    {% for department in job.departments %}
+                        <span class="job-item__department-name ml-1">{{ department.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="job-item_more">
+                <a class="job-item_more-link" href="javascript:void(0);">{{ 'Learn more' }} <i class="material-icons font-weight-bold ml-2">
+                        arrow_forward
+                    </i></a>
+            </div>
+        {% endblock %}
+    </article>
+</div>
+

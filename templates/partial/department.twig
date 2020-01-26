@@ -1,0 +1,8 @@
+<form>
+    <select name="department" class="form-control form-control-lg" onchange="this.form.submit()">
+        <option value="-1">All departments</option>
+        {% for department in departments %}
+            <option {{ currentDepartment == department.id ? "selected" : ""}} value="{{ department.id }}">{{ department.name }}</option>
+        {% endfor %}
+    </select>
+</form>

@@ -1,0 +1,9 @@
+{% if pager.pages > 1 %}
+    <nav aria-label="..." class="col-12">
+        <ul class="pagination justify-content-center">
+        {% for page in 1..pager.pages %}
+            <li class="page-item {{ pager.current==loop.index0 ? 'active' : '' }}"><a class="page-link" href="{{pager.link}}{{ loop.index0 }}">{{ loop.index }}</a></li>
+        {% endfor %}
+        </ul>
+    </nav>
+{% endif %}

@@ -1,0 +1,42 @@
+{% block html_head_container %}
+
+    {% include 'html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
+{% endblock %}
+
+<body class="{{body_class}}" data-template="base.twig">
+<header class="header" >
+    {% block header %}
+    {% endblock %}
+</header>
+
+<section id="content" role="main" class="container">
+    <div class="row mt-5 mb-3">
+        <div class="col-9">
+            <h1>{{'Our Open Positions'}}</h1>
+        </div>
+        <div class="col-3 text-right">
+            {% include 'partial/department.twig' %}
+        </div>
+    </div>
+    <div class="row {{sidebar_class}}">
+        {% block content %}
+            Sorry, no content
+        {% endblock %}
+    </div>
+    <div class="row">
+        {% include 'partial/pagination.twig' %}
+    </div>
+</section>
+
+{% block footer %}
+    <footer id="footer">
+        {% include 'footer.twig' %}
+    </footer>
+    {{ function('wp_footer') }}
+{% endblock %}
+</body>
+</html>
+
